@@ -1,0 +1,125 @@
+:root {
+  --bg: #1a1530;
+  --panel: #2a2350;
+  --btn: #f2f2ff;
+  --btn-on: #ffd166;
+  --text: #e9e6ff;
+  --accent: #ff8a3d;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hiragino Maru Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  overscroll-behavior: none;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px 16px;
+  min-height: 100%;
+}
+
+.screen {
+  width: min(100%, calc((100vh - 190px) * 16 / 9));
+  min-width: 280px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .5), 0 0 0 3px var(--panel);
+  background: #000;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+.pad {
+  width: min(100%, 768px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  touch-action: none;
+}
+
+.dpad { display: flex; gap: 14px; }
+
+.pad button {
+  width: 84px;
+  height: 84px;
+  border: none;
+  border-radius: 50%;
+  background: var(--btn);
+  color: #2a2350;
+  font-size: 30px;
+  font-weight: bold;
+  box-shadow: 0 6px 0 #9a94c9;
+  touch-action: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pad button.jump {
+  width: 110px;
+  height: 110px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 24px;
+  box-shadow: 0 6px 0 #b4561a;
+}
+
+.pad button.on {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #9a94c9;
+  background: var(--btn-on);
+}
+
+.pad button.jump.on { box-shadow: 0 2px 0 #b4561a; background: #ffb067; }
+
+.help {
+  margin: 0;
+  font-size: 13px;
+  opacity: .85;
+  text-align: center;
+  line-height: 2;
+}
+
+kbd {
+  display: inline-block;
+  padding: 0 6px;
+  margin: 0 2px;
+  border-radius: 4px;
+  background: var(--panel);
+  border: 1px solid #4a4280;
+  font-family: inherit;
+}
+
+.mute {
+  margin-left: 8px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  border: 1px solid #4a4280;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+@media (max-width: 520px) {
+  .pad button { width: 72px; height: 72px; font-size: 26px; }
+  .pad button.jump { width: 96px; height: 96px; font-size: 20px; }
+  .help { font-size: 11px; }
+}

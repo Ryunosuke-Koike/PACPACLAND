@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#1a1530">
+  <title>PACPAC LAND</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <div class="screen">
+      <canvas id="game" width="768" height="432" aria-label="PACPAC LAND ゲーム画面"></canvas>
+    </div>
+
+    <div class="pad" aria-label="操作ボタン">
+      <div class="dpad">
+        <button type="button" data-btn="left" aria-label="左へ移動">◀</button>
+        <button type="button" data-btn="right" aria-label="右へ移動">▶</button>
+      </div>
+      <button type="button" data-btn="jump" class="jump" aria-label="ジャンプ">JUMP</button>
+    </div>
+
+    <p class="help">
+      キーボード：<kbd>←</kbd><kbd>→</kbd> 移動 ／ <kbd>Space</kbd>・<kbd>Z</kbd>・<kbd>↑</kbd> ジャンプ（長押しで高く）
+      <button type="button" id="mute" class="mute">🔊 サウンド ON</button>
+    </p>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
